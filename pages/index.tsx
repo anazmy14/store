@@ -11,21 +11,27 @@ import Product from "../types/product";
 import Section from "../components/Section";
 
 type Props = {
-  sliderData: ApiResponse<SliderImage>;
-  categories: ApiResponse<Category>;
-  brands: ApiResponse<Brand>;
-  featuredItems: ApiResponse<Product>;
-  mostViewedItems: ApiResponse<Product>;
+  sliderData: SliderImage[];
+  categories: Category[];
+  brands: Brand[];
+  featuredItems: Product[];
+  mostViewedItems: Product[];
 };
 
-const Home = ({ sliderData, categories, brands, featuredItems, mostViewedItems }: Props) => {
+const Home = ({
+  sliderData,
+  categories,
+  brands,
+  featuredItems,
+  mostViewedItems,
+}: Props) => {
   return (
     <>
-      <Slider images={sliderData.results} />
+      <Slider images={sliderData} />
       <Section title="Main Categories">
         <SliderSection
           containerCssClass={styles["main-categories"]}
-          items={categories.results.map((cat) => ({
+          items={categories.map((cat) => ({
             id: cat.id,
             image: cat.image,
             title: cat.name,
@@ -35,28 +41,37 @@ const Home = ({ sliderData, categories, brands, featuredItems, mostViewedItems }
       <Section title="Popular Brands">
         <SliderSection
           containerCssClass={styles["brands"]}
-          items={brands.results.map((brand) => ({
+          items={brands.map((brand) => ({
             id: brand.id,
             image: brand.image,
             title: `Up to ${brand.sale_percentage}%`,
           }))}
         />
       </Section>
-      <Section title="Featured Items" >
-      <ItemsSection
-        products={featuredItems.results}
-      />
+      <Section title="Featured Items">
+        <ItemsSection products={featuredItems} />
       </Section>
-      <Section title="Most Viewed Items" >
-      <ItemsSection
-        products={mostViewedItems.results}
-      />
+      <Section title="Most Viewed Items">
+        <ItemsSection products={mostViewedItems} />
       </Section>
     </>
   );
 };
 
 export async function getStaticProps() {
+  const getALlPages = async (url: string) => {
+    const allData: any[] = [];
+    const getPage = async (url: string) => {
+      if (!url) return;
+      const res = await axios.get(url);
+      const data: ApiResponse<any> = await res.data;
+      allData.push(...data.results);
+      await getPage(data.next);
+    };
+    await getPage(url);
+    return allData;
+  };
+
   const urls = [
     "https://api-task.bit68.com/en/api/slider_image/",
     "https://api-task.bit68.com/en/api/categories/",
@@ -64,12 +79,12 @@ export async function getStaticProps() {
     "https://api-task.bit68.com/en/api/items?type=featured",
     "https://api-task.bit68.com/en/api/items?type=most_viewed",
   ];
-  const resList = await Promise.all(urls.map((url) => axios.get(url)));
-  const data = await Promise.all(resList.map((res) => res.data));
-  const [sliderData, categories, brands, featuredItems, mostViewedItems] = data;
+  const [sliderData, categories, brands, featuredItems, mostViewedItems] =
+    await Promise.all(urls.map(async (url) => await getALlPages(url)));
+
   return {
     props: { sliderData, categories, brands, featuredItems, mostViewedItems },
-    revalidate: 10 * 60,
+    revalidate:  60,
   };
 }
 
