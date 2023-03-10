@@ -1,0 +1,7 @@
+.main-categories img {
+  width: 100%;
+}
+
+.brands div:has(>img) {
+  background-color: #2d2f7d;
+}
