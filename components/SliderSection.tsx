@@ -9,12 +9,11 @@ type SliderItem = {
 };
 
 type Props = {
-  sectionTitle: string;
   items: SliderItem[];
   containerCssClass?: string;
 };
 
-const SliderSection = ({ items, sectionTitle ,containerCssClass }: Props) => {
+const SliderSection = ({ items, containerCssClass }: Props) => {
   const properties = {
     prevArrow: (
       <button className={styles["arrow"]}>
@@ -40,7 +39,6 @@ const SliderSection = ({ items, sectionTitle ,containerCssClass }: Props) => {
 
   return (
     <div className={`${styles["container"]} ${containerCssClass || ""} `}>
-      <h3 className={styles["title"]}> {sectionTitle} </h3>
       <Slide
         cssClass={styles["slider"]}
         infinite={false}
