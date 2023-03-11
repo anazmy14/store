@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap");
 
 /* reset */
 html,
@@ -153,24 +153,33 @@ a {
 
 @font-face {
   font-family: "SFPro";
-  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
-  font-weight: lighter;
+  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Light.ttf");
+  font-weight:100 ;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFPro";
-  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Bold.ttf");
-  font-weight: bold;
+  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFPro";
   src: url("../public/fonts/FontsFree-Net-SFProDisplay-Medium.ttf");
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "SFPro";
+  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Bold.ttf");
+  font-weight: 800 ;
+  font-style: normal;
+}
+
+
 
 /* global style */
 

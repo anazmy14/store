@@ -10,6 +10,7 @@ import styles from "../styles/home-page.module.css";
 import Product from "../types/product";
 import Section from "../components/Section";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 type Props = {
   sliderData: SliderImage[];
@@ -56,6 +57,7 @@ const Home = ({
       <Section title="Most Viewed Items">
         <ItemsSection products={mostViewedItems} />
       </Section>
+      <Footer/>
     </>
   );
 };
