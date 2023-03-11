@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Group_3230" data-name="Group 3230" transform="translate(-119 -32)" opacity="0.8">
+    <g id="Group_1715" data-name="Group 1715" transform="translate(119 32)">
+      <g id="close-circle">
+        <path id="Vector" d="M0,18.158,18.158,0" transform="translate(6.921 6.921)" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Vector-2" data-name="Vector" d="M18.158,18.158,0,0" transform="translate(6.921 6.921)" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Vector-3" data-name="Vector" d="M0,0H32V32H0Z" fill="none" opacity="0"/>
+      </g>
+    </g>
+  </g>
+</svg>

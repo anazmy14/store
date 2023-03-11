@@ -9,6 +9,7 @@ import ItemsSection from "../components/ItemsSection";
 import styles from "../styles/home-page.module.css";
 import Product from "../types/product";
 import Section from "../components/Section";
+import Header from "../components/Header";
 
 type Props = {
   sliderData: SliderImage[];
@@ -27,6 +28,7 @@ const Home = ({
 }: Props) => {
   return (
     <>
+      <Header/>
       <Slider images={sliderData} />
       <Section title="Main Categories">
         <SliderSection

@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  height: 140px;
+  background-color: red;
+}
+.header .msg {
+  background-color: #2d2f87;
+  text-align: center;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: lighter;
+}
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: white;
+  height: 100px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.brand {
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 0 10px;
+}
+
+.search {
+  display: flex;
+  margin: auto;
+  vertical-align: middle;
+  width: 60%;
+  min-width: 300px;
+}
+
+.search input[type="search"] {
+  padding: 5px 70px 5px 20px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #cbcbcb;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.search .search-btn {
+  transform: translateX(-70px);
+}
+
+.btns-box {
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.lang-btn {
+  color: #2d2f82;
+  font-size: 18px;
+  font-family: "Cairo", sans-serif;
+  transform: translateY(-10%);
+}
+
+.side-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #f7f7f7;
+  width: 300px;
+  height: 100vh;
+  padding: 20px 0;
+}
+
+.side-menu > * {
+    padding: 10px 20px;
+}
+
+.side-menu__logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;  
+  border-top: 1px solid #ADADAD;
+  border-bottom: 1px solid #ADADAD;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.side-menu__logo img{
+    margin-inline-end: 10px;
+}
+
+.side-menu a {
+    display: block;
+    font-size: 16px;
+}
+
+.side-menu__lang {
+    color: #2d2f82;
+    font-size: 16px;
+    font-family: "Cairo", sans-serif;
+    margin-top: 30px;
+  }
+  
+
+@media screen and (max-width: 1200px) {
+  .msg,
+  .search,
+  .logo,
+  .brand,
+  .lang-btn {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .nav {
+    justify-content: space-between;
+  }
+  .btns-box {
+    justify-content: flex-end;
+  }
+}
