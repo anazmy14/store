@@ -153,28 +153,28 @@ a {
 
 @font-face {
   font-family: "SFPro";
-  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Light.ttf");
+  src: url("/fonts/FontsFree-Net-SFProDisplay-Light.ttf");
   font-weight:100 ;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFPro";
-  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
+  src: url("/fonts/FontsFree-Net-SFProDisplay-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFPro";
-  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Medium.ttf");
+  src: url("/fonts/FontsFree-Net-SFProDisplay-Medium.ttf");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFPro";
-  src: url("../public/fonts/FontsFree-Net-SFProDisplay-Bold.ttf");
+  src: url("/fonts/FontsFree-Net-SFProDisplay-Bold.ttf");
   font-weight: 800 ;
   font-style: normal;
 }
