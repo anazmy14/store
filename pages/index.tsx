@@ -29,7 +29,8 @@ const Home = ({
 }: Props) => {
   return (
     <>
-      <Header/>
+      <title> Store Locator </title>
+      <Header />
       <Slider images={sliderData} />
       <Section title="Main Categories">
         <SliderSection
@@ -57,7 +58,7 @@ const Home = ({
       <Section title="Most Viewed Items">
         <ItemsSection products={mostViewedItems} />
       </Section>
-      <Footer/>
+      <Footer />
     </>
   );
 };
@@ -76,19 +77,21 @@ export async function getStaticProps() {
     return allData;
   };
 
+  const baseUrl = "https://api-task.bit68.com/en/api";
+
   const urls = [
-    "https://api-task.bit68.com/en/api/slider_image/",
-    "https://api-task.bit68.com/en/api/categories/",
-    "https://api-task.bit68.com/en/api/brands/",
-    "https://api-task.bit68.com/en/api/items?type=featured",
-    "https://api-task.bit68.com/en/api/items?type=most_viewed",
+    `${baseUrl}/slider_image/`,
+    `${baseUrl}/categories/`,
+    `${baseUrl}/brands/`,
+    `${baseUrl}/items?type=featured`,
+    `${baseUrl}/items?type=most_viewed`,
   ];
   const [sliderData, categories, brands, featuredItems, mostViewedItems] =
     await Promise.all(urls.map(async (url) => await getALlPages(url)));
 
   return {
     props: { sliderData, categories, brands, featuredItems, mostViewedItems },
-    revalidate:  60,
+    revalidate: 60,
   };
 }
 
