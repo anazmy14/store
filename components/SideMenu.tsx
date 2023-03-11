@@ -57,29 +57,30 @@ const SideMenu = () => {
     setIsOpen(false);
   };
 
-  if (!isOpen)
-    return (
+  return (
+    <>
       <button className={styles["menu-btn"]} onClick={handleOpenBtn}>
         <Image src="/menu.svg" width={32} height={32} alt="menu" />
       </button>
-    );
-
-  return (
-    <menu className={styles["side-menu"]}>
-      <button className={styles["side-menu__colse"]} onClick={handleCloseBtn}>
-        <Image src="/close.svg" width={32} height={32} alt="close" />
-      </button>
-      <div className={styles["side-menu__logo"]}>
-        <Image src="/logo.svg" width={24} height={24} alt="logo" />
-        <span> Store Locator </span>
-      </div>
-      {links.map((link) => (
-        <Link href={link.link} key={link.label}>
-          {link.label}
-        </Link>
-      ))}
-      <button className={styles["side-menu__lang"]}> العربية </button>
-    </menu>
+      <menu className={styles["side-menu"]} style={{
+        visibility: isOpen? "visible" : "hidden",
+        left: isOpen? 0 : -300 
+      }} >
+        <button className={styles["side-menu__colse"]} onClick={handleCloseBtn}>
+          <Image src="/close.svg" width={32} height={32} alt="close" />
+        </button>
+        <div className={styles["side-menu__logo"]}>
+          <Image src="/logo.svg" width={24} height={24} alt="logo" />
+          <span> Store Locator </span>
+        </div>
+        {links.map((link) => (
+          <Link href={link.link} key={link.label}>
+            {link.label}
+          </Link>
+        ))}
+        <button className={styles["side-menu__lang"]}> العربية </button>
+      </menu>
+    </>
   );
 };
 
