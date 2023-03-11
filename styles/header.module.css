@@ -14,7 +14,7 @@
   color: white;
   height: 40px;
   line-height: 40px;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
 }
 .nav {
@@ -31,7 +31,7 @@
 }
 
 .brand {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: lighter;
   margin: 0 10px;
 }
@@ -51,7 +51,7 @@
   border: 1px solid #cbcbcb;
   height: 60px;
   line-height: 60px;
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
 .search .search-btn {
@@ -67,7 +67,7 @@
 
 .lang-btn {
   color: #2d2f82;
-  font-size: 18px;
+  font-size: 1.1rem;
   font-family: "Cairo", sans-serif;
   transform: translateY(-10%);
 }
@@ -98,7 +98,7 @@
   border-bottom: 1px solid #adadad;
   padding: 20px;
   margin: 20px 0;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .side-menu__logo img {
@@ -107,19 +107,18 @@
 
 .side-menu a {
   display: block;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
 .side-menu__lang {
   color: #2d2f82;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: "Cairo", sans-serif;
   margin-top: 30px;
 }
 
 @media screen and (max-width: 1200px) {
-  .msg,
   .search,
   .logo,
   .brand,

@@ -1,32 +1,37 @@
-
-.footer{
-    padding: 50px 5%;
+.footer {
+  padding: 50px 5%;
 }
 
 .links {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows:auto;
-    row-gap: 20px;
-    border-top: 1px solid #dbdbdb;
-    border-bottom: 1px solid #dbdbdb;
-    padding: 50px 0px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  row-gap: 20px;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 50px 0px;
 }
 
 .links h3 {
-    font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
 }
 
 .links a {
-    font-size: 16px;
+  font-size: 1rem;
 }
 
 .footer p {
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 50px; 
-    text-align: center;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .links {
+   grid-template-columns: 1fr 1fr;
+  }
 }

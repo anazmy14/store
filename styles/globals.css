@@ -183,6 +183,10 @@ a {
 
 /* global style */
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "SFPro";
   font-size: 20px;
@@ -196,9 +200,15 @@ body {
 .section {
   padding: 50px 5%;
 }
-.section h3 {
+.section > h3 {
   color: #2d2f78;
-  font-size: 30px;
+  font-size: 1.9rem;
   font-weight: bold;
   margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+  html{
+      font-size: 12px;
+  }
 }
