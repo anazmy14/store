@@ -18,7 +18,10 @@
   font-weight: 600;
 }
 .nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 20px 150px 3fr 100px;
+  grid-template-rows: 1fr;
+  align-items: center;
   flex-wrap: nowrap;
   align-items: center;
   padding: 20px 10%;
@@ -40,7 +43,8 @@
   display: flex;
   margin: auto;
   vertical-align: middle;
-  width: 60%;
+  width: 100%;
+  max-width: 800px;
   min-width: 300px;
 }
 
@@ -56,6 +60,7 @@
 
 .search .search-btn {
   transform: translateX(-70px);
+  width: 0px;
 }
 
 .btns-box {
@@ -86,7 +91,7 @@
   transition: ease-in 0.5s;
 }
 
-.side-menu > * {  
+.side-menu > * {
   padding: 10px 20px;
 }
 
@@ -119,7 +124,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .search,
   .logo,
   .brand,
   .lang-btn {
@@ -127,11 +131,29 @@
   }
   .menu-btn {
     display: block;
+    width: fit-content;
   }
   .nav {
-    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+    padding: 20px;
   }
   .btns-box {
     justify-content: flex-end;
+    grid-column: 2/3;
+    width: 100%;
+  }
+  .search {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    min-width: 100%;
+  }
+  .search input[type="search"] {
+    height: 40px;
+    padding: 0 50px 0 10px;
+  }
+  .search .search-btn{
+    transform: translateX(-50px);
   }
 }
