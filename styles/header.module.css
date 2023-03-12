@@ -6,8 +6,6 @@
   bottom: 0;
   z-index: 1000;
   height: 160px;
-  background-color: red;
-  overflow: hidden;
 }
 .header .msg {
   background-color: #2d2f87;
@@ -169,7 +167,6 @@
   }
   .search {
     grid-row: 2/3;
-    margin-bottom: 20px;
     grid-column: 1/3;
     min-width: 100%;
   }
